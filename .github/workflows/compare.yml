@@ -2,7 +2,7 @@ name: Check Updates
 
 on:
   schedule:
-    - cron: '0 16 */1 * *'
+    - cron: '0 12 */1 * *'
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
           github-token: ${{ secrets.PAT_TOKEN }}
           script: |
               await github.rest.actions.createWorkflowDispatch({
-              owner: 'k0baya',
+              owner: 'aggcheb',
               repo: 'new-api-freebsd',
               workflow_id: 'build.yml',
               ref: 'main'
